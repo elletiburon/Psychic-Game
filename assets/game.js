@@ -6,9 +6,12 @@ var guessesLeft = 17;
 var wins = 0;
 var losses = 0;
 
+
+
 //click to begin
 document.onkeyup = function (event) {
     console.log(event.key);
+
 
 //computer chooses random letter
 var computer = letters[Math.floor(Math.random() * letters.length)];
@@ -20,12 +23,18 @@ var player = event.key;
 
 if (player == computer) {
     console.log("win")
-    wins++
+    wins++;
 }
 else {
     console.log("lose")
-    losses++
+    losses++;
 } 
+
+//count down number of guesses
+
+
+
+
 
 
 
@@ -34,5 +43,7 @@ var winDiv = document.getElementById("wins");
       winDiv.textContent = wins;
 var lossesDiv = document.getElementById("losses");
     lossesDiv.textContent = losses;
+var guessedDiv = document.getElementById("alreadyguessed");
+    guessedDiv.textcontent = computer;
 
 };
